@@ -1,14 +1,17 @@
-import React, {useEffect} from 'react';
-import Navbar from './components/Navbar'
+import React, {useEffect, useState} from 'react';
+import Navbar from './components/Navbar';
+import Characters from './components/Characters';
 
 function App() {
+
+  const [characters, setCharacters] = useState([]);
 
   const initialUrl = "https://rickandmortyapi.com/api/character"
 
   const fetchCharacters = (url) => {
   fetch(url)
  .then(response => response.json())
- .then(data => console.log(data))
+ .then(data => setCharacters(data.results))
  .catch(error => console.log(error))
   };
 
@@ -17,7 +20,12 @@ function App() {
   }, [])
 
   return (
+    <>
     <Navbar brand={"Rick and Morty App"}/>
+    <div className='container'>
+      <Characters characters={characters} />
+    </div>
+    </>
   );
 }
 
