@@ -11,8 +11,8 @@ const Characters = ({characters = []}) => {
                         <div className='card-boby'>
                             <h5 className='card-title'>{item.name}</h5>
                             <hr />
-                            <p>Species: {item.species}</p>
-                            <p>location: {item.location.name}</p>
+                            <p className='info'>Species: {item.species}</p>
+                            <p className='info'>location: {item.location.name}</p>
                         </div>
                     </div>
                 </div>

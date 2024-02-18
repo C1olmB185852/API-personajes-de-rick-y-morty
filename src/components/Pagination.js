@@ -17,7 +17,8 @@ const handleNext = () => {
             <li className="page-item">
                 <button className="page-link" onClick={handlePrevious}>Previous</button>
             </li>
-            ) : null}
+             ) : null}
+            
             {next ? (
             <li className="page-item"> 
                 <button className="page-link" onClick={handleNext}>Next</button>
