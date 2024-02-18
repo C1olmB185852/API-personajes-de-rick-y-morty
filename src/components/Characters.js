@@ -5,7 +5,11 @@ const Characters = ({characters = []}) => {
         <div className='row'>
             {
             characters.map((item, index) => (
-                <div className='col'></div>
+                <div key={index} className='col'>
+                    <div className='card'>
+                        <img src={item.image} alt=''/>
+                    </div>
+                </div>
                 ))}
 </div>
     )
