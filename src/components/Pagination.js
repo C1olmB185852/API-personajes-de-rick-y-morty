@@ -11,6 +11,7 @@ const handleNext = () => {
 }
 
     return (
+        <nav className="my-5">
         <ul className="pagination justify-content-center">
             {prev ? (
             <li className="page-item">
@@ -23,7 +24,9 @@ const handleNext = () => {
             </li>
             ) : null}
         </ul>
+        </nav>
     )
 };
+
 
 export default Pagination;
