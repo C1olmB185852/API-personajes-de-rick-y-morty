@@ -1,13 +1,25 @@
+import React, {useEffect} from 'react';
+import Navbar from './components/Navbar'
+
 function App() {
+
+  const initialUrl = "https://rickandmortyapi.com/api/character"
+
+  const fetchCharacters = (url) => {
+  fetch(url)
+ .then(response => response.json())
+ .then(data => console.log(data))
+ .catch(error => console.log(error))
+  };
+
+  useEffect(() => {
+    fetchCharacters(initialUrl);
+  }, [])
+
   return (
-    <>
-    <nav className="navbar navbar-dark bg-dark">
-      <div className="container">
-        <a className="navbar-brand" href="/">Rick and Morty App</a>
-      </div>
-    </nav>
-    </>
+    <Navbar brand={"Rick and Morty App"}/>
   );
 }
+
 
 export default App;
